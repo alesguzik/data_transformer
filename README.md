@@ -1,6 +1,6 @@
 # DataTransformer
 
-TODO: Write a gem description
+Declarative transformations for objects and object collections
 
 ## Installation
 
