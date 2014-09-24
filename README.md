@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    DataTransformer.one x, :foo                       # => {foo: x.foo}
+    DataTransformer.one x, {foo: :bar}                # => {foo: x.bar}
+    DataTransformer.one x, {foo: [:bar]}              # => {foo: x.map(&:bar)}
+    DataTransformer.one x, {foo: [:bar :baz]}         # => {foo: x.bar.baz}
+    DataTransformer.one x, {foo: [:bar [:baz]]}       # => {foo: x.bar.map(&:baz)}
+    DataTransformer.one x, {foo: [:bar [:baz :quux]]} # => {foo: x.bar.map{|y| y.baz.quux}}
+
+See /spec for more examples.
 
 ## Contributing
 
